@@ -7,38 +7,38 @@ Code for this project is :
                def __init__(self, name, scores):
                 self.name = name
                 self.scores = scores
-def calculate_average(self):
- if not self.scores:
-return 0
-return sum(self.scores) / len(self.scores)
+    def calculate_average(self):
+    if not self.scores:
+    return 0
+    return sum(self.scores) / len(self.scores)
 
-def is_passing(self, passing_score=40):
-return all(score >= passing_score for score in self.scores)
-
-
-class PerformanceTracker:
-def __init__(self):
-self.students = {}
-
-def add_student(self, name, scores):
-self.students[name] = Student(name, scores)
-
-def calculate_class_average(self):
-if not self.students:
-return 0
-total_average = sum(student.calculate_average() for student in self.students.values())
-return total_average / len(self.students)
-
-def display_student_performance(self):
-for student in self.students.values():
-average = student.calculate_average()
-status = "Passing" if student.is_passing() else "Needs Improvement"
-print(f"Student: {student.name}, Average Score: {average:.2f}, Status: {status}")
+    def is_passing(self, passing_score=40):
+    return all(score >= passing_score for score in self.scores)
 
 
-def main():
-    tracker = PerformanceTracker()
-    while True:
+    class PerformanceTracker:
+    def __init__(self):
+    self.students = {}
+
+    def add_student(self, name, scores):
+    self.students[name] = Student(name, scores)
+
+    def calculate_class_average(self):
+    if not self.students:
+    return 0
+    total_average = sum(student.calculate_average() for student in self.students.values())
+    return total_average / len(self.students)
+
+    def display_student_performance(self):
+    for student in self.students.values():
+    average = student.calculate_average()
+    status = "Passing" if student.is_passing() else "Needs Improvement"
+    print(f"Student: {student.name}, Average Score: {average:.2f}, Status: {status}")
+
+
+    def main():
+       tracker = PerformanceTracker()
+        while True:
         name = input("Enter the student's name (or type 'exit' to finish): ")
         if name.lower() == 'exit':
             break
