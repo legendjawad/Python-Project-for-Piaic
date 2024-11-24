@@ -1,14 +1,14 @@
 This project, Student Performance Tracker, is a Python-based application designed to manage and analyze the academic performance of students. It allows teachers, administrators, or tutors to input student scores in various subjects, calculate averages, and evaluate their performance. 
 The program is structured using object-oriented programming (OOP) principles for modularity and scalability.
+
 Code for this project is :
 
-class Student:
-def __init__(self, name, scores):
-self.name = name
-self.scores = scores
-
+               class Student:
+               def __init__(self, name, scores):
+                self.name = name
+                self.scores = scores
 def calculate_average(self):
-if not self.scores:
+ if not self.scores:
 return 0
 return sum(self.scores) / len(self.scores)
 
@@ -38,7 +38,6 @@ print(f"Student: {student.name}, Average Score: {average:.2f}, Status: {status}"
 
 def main():
     tracker = PerformanceTracker()
-
     while True:
         name = input("Enter the student's name (or type 'exit' to finish): ")
         if name.lower() == 'exit':
